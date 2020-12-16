@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BooksUsersClassLibrary
 {
-    class BXBooks
+    public class Book
     {
         public string ISBN { get; set; }
         public string BookTitle { get; set; }
@@ -14,6 +14,7 @@ namespace BooksUsersClassLibrary
         public string ImageURLS { get; set; }
         public string ImageURLM { get; set; }
         public string ImageURLL { get; set; }
+        public List<BookUserRating> BookUserRating { get; set; } = new List<BookUserRating>();
 
     }
 }

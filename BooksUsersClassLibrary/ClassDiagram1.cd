@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="BooksUsersClassLibrary.BXBookRatings">
-    <Position X="2" Y="1.75" Width="1.5" />
+  <Class Name="BooksUsersClassLibrary.BookUserRating">
+    <Position X="1.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAAAAAAAgAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BXBookRatings.cs</FileName>
@@ -11,20 +11,24 @@
       <Property Name="ISBN" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="BooksUsersClassLibrary.BXBooks">
-    <Position X="7.5" Y="1.25" Width="1.5" />
+  <Class Name="BooksUsersClassLibrary.Book">
+    <Position X="1.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAAAADAAAAAAAAAAAQAAAAAIAAIAAAAA=</HashCode>
+      <HashCode>EAAAAAAAAQAAAAAADAAAAAAAAAAAQAAAAAIAAIAAAAA=</HashCode>
       <FileName>BXBooks.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BookUserRating" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="BooksUsersClassLibrary.BXUsers">
-    <Position X="4.25" Y="4.25" Width="1.5" />
+  <Class Name="BooksUsersClassLibrary.User">
+    <Position X="1.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAAAAACAAAAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BXUsers.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
+      <Property Name="BookUserRatings" />
       <Property Name="LocationID" />
     </ShowAsAssociation>
   </Class>
@@ -34,6 +38,29 @@
       <HashCode>AAAAAAAACAAAAAAIAAAAAAAAAAIAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Location.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="BooksUsersClassLibrary.BookDetails">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BookDetails.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BookUserRatings" />
+      <Property Name="Users" />
+      <Property Name="Books" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Collections.Generic.List&lt;T&gt;" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="System.Collections.Generic.List&lt;T&gt;.Enumerator" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

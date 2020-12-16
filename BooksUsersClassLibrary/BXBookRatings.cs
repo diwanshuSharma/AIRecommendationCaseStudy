@@ -4,10 +4,10 @@ using System.Text;
 
 namespace BooksUsersClassLibrary
 {
-    class BXBookRatings
+    public class BookUserRating
     {
-        public BXUsers UserID { get; set; }
-        public BXBooks ISBN { get; set; }
+        public User UserID { get; set; }
+        public Book ISBN { get; set; }
         public int BookRating { get; set; }
 
     }

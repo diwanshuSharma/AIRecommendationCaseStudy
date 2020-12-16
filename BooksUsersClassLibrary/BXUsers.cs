@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BooksUsersClassLibrary
 {
-    class BXUsers
+    public class User
     {
         public int UserID { get; set; }
         public int Age { get; set; }
@@ -16,6 +16,7 @@ namespace BooksUsersClassLibrary
             {
             }
         }
-        
+        public List<BookUserRating> BookUserRatings { get; set; }
+
     }
 }
