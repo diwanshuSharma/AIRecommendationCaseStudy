@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLoadingClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace AIRecommendationCaseStudy
     {
         static void Main(string[] args)
         {
+            CSVDataLoader load = new CSVDataLoader();
+            load.Load();
         }
     }
 }

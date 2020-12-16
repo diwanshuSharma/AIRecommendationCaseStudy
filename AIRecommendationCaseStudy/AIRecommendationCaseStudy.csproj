@@ -49,5 +49,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BooksUsersClassLibrary\BooksUsersClassLibrary.csproj">
+      <Project>{8F9A7C87-0E3C-49B5-A4D8-B6A6C8AA9CCE}</Project>
+      <Name>BooksUsersClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLoadingClassLibrary\DataLoadingClassLibrary.csproj">
+      <Project>{aebeb399-dca2-4582-9c37-49306cf1ffba}</Project>
+      <Name>DataLoadingClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

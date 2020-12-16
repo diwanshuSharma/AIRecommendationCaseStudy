@@ -1,6 +1,7 @@
 ﻿using BooksUsersClassLibrary;
 using LumenWorks.Framework.IO.Csv;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 
@@ -8,18 +9,42 @@ namespace DataLoadingClassLibrary
 {
     public class CSVDataLoader : IDataLoader
     {
+        List<Book> Books = new List<Book>();
+        List<User> Users = new List<User>();
+        List<BookUserRating> BookUserRatings = new List<BookUserRating>();
+        BookDetails BookDetails = new  BookDetails();
+
+        CSVDataLoader()
+        {
+            LoadBooks();
+            LoadUsers();
+            LoadRatings();
+            LoadBookDetails();
+        }
+
         public BookDetails Load()
         {
+            return BookDetails;
+            //throw new NotImplementedException();
+        }
 
-            var csvTable = new DataTable();
+        private void LoadBookDetails()
+        {
+            throw new NotImplementedException();
+        }
 
-            using (var csvReader = new CsvReader(new StreamReader(System.IO.File.OpenRead(@"C:\Eurofins-Training\RecommendationEngine_Project\BX-CSV-Dump\BX_Books.csv")), true))
-            {
-                csvTable.Load(csvReader);
-            }
+        private void LoadRatings()
+        {
+            throw new NotImplementedException();
+        }
 
-            Console.WriteLine(csvTable.ToString());
+        private void LoadUsers()
+        {
+            throw new NotImplementedException();
+        }
 
+        private void LoadBooks()
+        {
             throw new NotImplementedException();
         }
     }
