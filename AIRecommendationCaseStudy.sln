@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIRecommendationCaseStudy", "AIRecommendationCaseStudy\AIRecommendationCaseStudy.csproj", "{4F3A21CF-8816-4FA1-8759-B2F75B95272F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Layer", "Business Layer", "{2E52A084-89CF-4F16-98B3-184AEBD2C067}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer", "Data Access Layer", "{AD57F598-7714-42DD-9ADB-18F808FE8FF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIRecommendationApp.PearsonEngine", "AIRecommendationApp.PearsonEngine\AIRecommendationApp.PearsonEngine.csproj", "{701403FD-35B9-4383-8890-A5E0B0807437}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{46B8086C-07F1-41C4-94AF-65CF3C7F3147}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation Layer", "Presentation Layer", "{F822A067-E28C-4DF1-AD7F-C5C01299EA3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F3A21CF-8816-4FA1-8759-B2F75B95272F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F3A21CF-8816-4FA1-8759-B2F75B95272F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F3A21CF-8816-4FA1-8759-B2F75B95272F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F3A21CF-8816-4FA1-8759-B2F75B95272F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{701403FD-35B9-4383-8890-A5E0B0807437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{701403FD-35B9-4383-8890-A5E0B0807437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{701403FD-35B9-4383-8890-A5E0B0807437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{701403FD-35B9-4383-8890-A5E0B0807437}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{701403FD-35B9-4383-8890-A5E0B0807437} = {2E52A084-89CF-4F16-98B3-184AEBD2C067}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {491D8E92-8503-4E4B-B44C-A8FFBF0C3784}
+	EndGlobalSection
+EndGlobal
