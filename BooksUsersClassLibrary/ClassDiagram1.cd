@@ -4,7 +4,7 @@
     <Position X="1.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAAAAAAAgAEAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BXBookRatings.cs</FileName>
+      <FileName>BookUserRating.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="UserID" />
@@ -15,7 +15,7 @@
     <Position X="1.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAQAAAAAADAAAAAAAAAAAQAAAAAIAAIAAAAA=</HashCode>
-      <FileName>BXBooks.cs</FileName>
+      <FileName>Book.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="BookUserRating" />
@@ -24,20 +24,12 @@
   <Class Name="BooksUsersClassLibrary.User">
     <Position X="1.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAACAAAAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BXUsers.cs</FileName>
+      <HashCode>EAAAAAAAAAAAAAAIAEAAAAgAAAAAAAAAAABABAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="BookUserRatings" />
-      <Property Name="LocationID" />
     </ShowAsAssociation>
-  </Class>
-  <Class Name="BooksUsersClassLibrary.Location">
-    <Position X="9.5" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAAIAAAAAAAAAAIAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Location.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Class Name="BooksUsersClassLibrary.BookDetails">
     <Position X="7.5" Y="4" Width="1.5" />
