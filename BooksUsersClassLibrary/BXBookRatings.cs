@@ -6,8 +6,8 @@ namespace BooksUsersClassLibrary
 {
     class BXBookRatings
     {
-        public int UserID { get; set; }
-        public string ISBN { get; set; }
+        public BXUsers UserID { get; set; }
+        public BXBooks ISBN { get; set; }
         public int BookRating { get; set; }
 
     }

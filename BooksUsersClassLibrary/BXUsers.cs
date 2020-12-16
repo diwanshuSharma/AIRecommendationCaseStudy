@@ -7,8 +7,15 @@ namespace BooksUsersClassLibrary
     class BXUsers
     {
         public int UserID { get; set; }
-        public string Location { get; set; }
         public int Age { get; set; }
 
+        public Location LocationID
+        {
+            get => default;
+            set
+            {
+            }
+        }
+        
     }
 }
