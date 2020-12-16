@@ -8,25 +8,50 @@ namespace PearsonRecommendationEngineUnitTest
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void CheckPearson()
+
+        static PersonRecommendationEngine pearson = null;
+
+        [TestInitialize]
+        public void Initialize()
         {
-            PersonRecommendationEngine pearson = new PersonRecommendationEngine();
-            List<int> list1 = new List<int>();
-            list1.Add(1);
-            list1.Add(2);
-            list1.Add(3);
-            list1.Add(4);
-            list1.Add(5);
-            List<int> list2 = new List<int>();
-            list2.Add(100);
-            list2.Add(22);
-            list2.Add(315);
-            list2.Add(49);
-            list2.Add(53);
-            double result = pearson.GetCorrelation(list1, list2);
-            double exp = -0.0889;
-            Assert.AreEqual(exp, result);
+            pearson = new PersonRecommendationEngine();
         }
+
+        [TestCleanup]
+        public void Clean()
+        {
+            pearson = null;
+        }
+
+         [TestMethod]
+         public void PearsonEngine_OnSameLength_ReturnDouble()
+         {
+             List<int> a = new List<int> { 1, 2, 3, 4, 5 };
+             List<int> b = new List<int> { 1, 2, 2, 2, 3 };
+             double expected = 0.89;
+             double actual = pearson.GetCorrelation(a, b);
+             Assert.AreEqual(expected, Math.Round(actual, 2));
+         }
+
+         [TestMethod]
+         public void PearsonEngine_BaseLengthLarger_ReturnDouble()
+         {
+             List<int> a = new List<int> { 1, 2, 3, 4, 5, 6 };
+             List<int> b = new List<int> { 1, 2, 2, 2, 3 };
+             double expected = 0.08;
+             double actual = pearson.GetCorrelation(a, b);
+             Assert.AreEqual(expected, Math.Round(actual, 2));
+         }
+
+         [TestMethod]
+         public void PearsonEngine_BaseLengthSmaller_ReturnDouble()
+         {
+             List<int> a = new List<int> { 1, 2, 3, 4 };
+             List<int> b = new List<int> { 1, 2, 2, 2, 3 };
+             double expected = 0.77;
+             double actual = pearson.GetCorrelation(a, b);
+             Assert.AreEqual(expected, Math.Round(actual, 2));
+         }
+        
     }
 }

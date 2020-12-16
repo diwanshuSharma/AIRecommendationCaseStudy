@@ -3,61 +3,97 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MathNet.Numerics.Statistics;
 
 namespace AIRecommendationApp.PearsonEngine
 {
     public class PersonRecommendationEngine : IRecommendationEngine
     {
-        public double GetCorrelation(List<int> baselist, List<int> otherlist)
+        public double GetCorrelation(List<int> baseList, List<int> otherList)
         {
-            if (baselist.Count != otherlist.Count)
+            int len1 = baseList.Count, len2 = otherList.Count;
+            List<int> tArray1 = new List<int>(), tArray2 = new List<int>();
+            int minLength = Math.Min(len1, len2);
+
+            if (len1 != len2)
             {
-                if (baselist.Count > otherlist.Count)
+                if (len1 < len2)                                  //Second Array is larger
                 {
-                    int difference = baselist.Count - otherlist.Count;
-                    for (int i = 0; i < difference; i++)
+                    for (int i = 0; i < Math.Min(len1, len2); i++)
                     {
-                        otherlist.Add(1);
+                        tArray1.Add(baseList[i]);
+                        tArray2.Add(otherList[i]);
                     }
                 }
-                else
+                else                                            //First Array is larger
                 {
-                    int difference = otherlist.Count - baselist.Count;
-                    int j = baselist.Count;
-                    for (int i = 0; i < difference; i++)
+                    tArray1 = baseList;
+                    for (int i = 0; i < baseList.Count; i++)
                     {
-                        otherlist.RemoveAt(j++);
+                        if (i < minLength)
+                        {
+                            tArray2.Add(otherList[i]);
+                        }
+                        else
+                        {
+                            tArray1[i] += 1;
+                            tArray2.Add(1);
+                        }
                     }
                 }
             }
-
-            foreach (int item in baselist)
+            else                                                //Same Count
             {
-                if (item == 0)
+                tArray1 = baseList;
+                tArray2 = otherList;
+            }
+            for (int i = 0; i < tArray1.Count; i++)                 //If there are any zeros
+            {
+                if (tArray1[i] == 0 || tArray2[i] == 0)
                 {
-                    int position = baselist.IndexOf(item);
-                    otherlist[position] += 1;
+                    tArray1[i] += 1;
+                    tArray2[i] += 1;
                 }
             }
 
-            foreach (int item in otherlist)
+            return CalculatePearson(tArray1, tArray2);
+        }
+
+        private static double CalculatePearson(List<int> array1, List<int> array2)
+        {
+            double mean1 = 0, mean2 = 0;
+            double numerator = 0, deno1 = 0, deno2 = 0;
+
+            foreach (int elem in array1)
             {
-                if (item == 0)
-                {
-                    int position = otherlist.IndexOf(item);
-                    baselist[position] += 1;
-                }
+                mean1 += elem;
             }
-            double avg1 = baselist.Average();
-            double avg2 = otherlist.Average();
-            var sum1 = baselist.Zip(otherlist, (x1, y1) => (x1 - avg1) * (y1 - avg2)).Sum();
+            foreach (int elem in array2)
+            {
+                mean2 += elem;
+            }
+            mean1 /= array1.Count;
+            mean2 /= array1.Count;
 
-            var sumSqr1 = baselist.Sum(x => Math.Pow((x - avg1), 2.0));
-            var sumSqr2 = otherlist.Sum(y => Math.Pow((y - avg2), 2.0));
+            for (int i = 0; i < array1.Count; i++)
+            {
+                numerator += (array1[i] - mean1) * (array2[i] - mean2);
+                deno1 += (array1[i] - mean1) * (array1[i] - mean1);
+                deno2 += (array2[i] - mean2) * (array2[i] - mean2);
+            }
 
-            var result = sum1 / Math.Sqrt(sumSqr1 * sumSqr2);
-            result = (double)decimal.Round((decimal)result, 4);
-            return result;
+            double pearson = (numerator) / (Math.Sqrt(deno1 * deno2));
+            return pearson;
+        }
+    }
+
+    public class MathNetPearsonRecommendationEngine : IRecommendationEngine
+    {
+        public double GetCorrelation(List<int> baseList, List<int> otherList)
+        {
+            var dblBaseList = baseList.ConvertAll<double>( i => i);
+            var dblOtherList = otherList.ConvertAll<double>( i => i);
+            return Correlation.Pearson(dblBaseList, dblOtherList);
         }
     }
 }
