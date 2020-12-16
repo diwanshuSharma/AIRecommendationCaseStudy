@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{46B8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation Layer", "Presentation Layer", "{F822A067-E28C-4DF1-AD7F-C5C01299EA3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PearsonRecommendationEngineUnitTest", "PearsonRecommendationEngineUnitTest\PearsonRecommendationEngineUnitTest.csproj", "{590FD3F8-F99D-49C4-B61D-D46D7005BB9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,12 +31,17 @@ Global
 		{701403FD-35B9-4383-8890-A5E0B0807437}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{701403FD-35B9-4383-8890-A5E0B0807437}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{701403FD-35B9-4383-8890-A5E0B0807437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{590FD3F8-F99D-49C4-B61D-D46D7005BB9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{590FD3F8-F99D-49C4-B61D-D46D7005BB9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{590FD3F8-F99D-49C4-B61D-D46D7005BB9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{590FD3F8-F99D-49C4-B61D-D46D7005BB9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{701403FD-35B9-4383-8890-A5E0B0807437} = {2E52A084-89CF-4F16-98B3-184AEBD2C067}
+		{590FD3F8-F99D-49C4-B61D-D46D7005BB9E} = {46B8086C-07F1-41C4-94AF-65CF3C7F3147}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {491D8E92-8503-4E4B-B44C-A8FFBF0C3784}
